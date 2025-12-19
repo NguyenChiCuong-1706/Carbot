@@ -4,7 +4,7 @@ Build worksapce steps:
    - mkdir src && cd src
    - git clone https://github.com/NguyenChiCuong-1706/Carbot
 2. **Build workspace**:
-   - colcon build --symlink -install (file code moi phai build lai de chay)
+   - colcon build --symlink -install (_Add new code file need build again_)
    - source install/setup.bash
      
 3. **Run workspace**: 
