@@ -1,0 +1,161 @@
+<?xml version="1.0">
+<robot
+  name="carbot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="2.94902990916057E-17 -0.0519621145698546 -0.11319666441339"
+        rpy="0 0 0" />
+      <mass
+        value="73.9732959024903" />
+      <inertia
+        ixx="7.4770569402914"
+        ixy="1.11742454350262E-16"
+        ixz="-3.11660956146003E-17"
+        iyy="1.07779725747702"
+        iyz="-0.19390857916837"
+        izz="7.628441456232" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carbot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carbot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+
+
+  <link
+    name="Link-left">
+
+    <inertial>
+      <origin
+        xyz="0.082144 3.0583E-05 4.6811E-05"
+        rpy="0 0 0" />
+      <mass
+        value="6.7723" />
+      <inertia
+        ixx="0.045319"
+        ixy="-6.0801E-06"
+        ixz="-9.3064E-06"
+        iyy="0.038062"
+        iyz="8.0019E-07"
+        izz="0.038063" />
+    </inertial>
+
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carbot/meshes/Link-left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carbot/meshes/Link-left.STL" />
+      </geometry>
+    </collision>
+    
+  </link>
+
+  <joint
+    name="left"
+    type="continuous">
+    <origin
+      xyz="-0.2725 -0.26467 -0.25895"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link-left" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+
+  <link
+    name="Link-right">
+    <inertial>
+      <origin
+        xyz="-0.082144 5.5511E-17 -5.5916E-05"
+        rpy="0 0 0" />
+      <mass
+        value="6.7723" />
+      <inertia
+        ixx="0.045319"
+        ixy="1.2069E-20"
+        ixz="-1.1116E-05"
+        iyy="0.038062"
+        iyz="-2.4619E-21"
+        izz="0.038063" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carbot/meshes/Link-right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://carbot/meshes/Link-right.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="right"
+    type="continuous">
+    <origin
+      xyz="0.2725 -0.26716 -0.26733"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link-right" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+</robot>
